@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<style>
+    input[type=text], select {
+        display: block;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    span {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(12, 11, 11);
+    }
+
+    p {
+        margin: 10px;
+    }
+
+    body {
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .questao {
+        background-color: #0b7ce6a1;
+        padding: 1px 0px 10px 10px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+
+    }
+
+    .questao:hover {
+        background-color: #e60575;
+    }
+
+    input[type=button] {
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <!--Questão 01 intervalo de números-->
+    <div id="corpo">
+        <div class="questao">
+            <h1>Questã 01:<span>Mostrar os números entre 2 valores
+                    <a href="detalhesExe12.html"
+                        target="_blank">detalhar</a></span></h1>
+            <p id="solucao1">Resultado: Os número entre A e Z são (x,x,x,x,x).</p>
+            <label for=" v1">Valor 01:</label>
+            <input type="text" id="v1">
+            <label for="v2">Valor 02:</label>
+            <input type="text" id="v2">
+            <input type="button" onclick="calcular()" value="Executar">
+            <script>
+                var valor01, valor02;
+                function calcular(){
+                    valor01=document.getElementById("v1").value;
+                    valor02=document.getElementById("v2").value;
+                    var c;
+                    var rent = "";
+                    for (c=valor01; c<=valor02; c++){
+
+                        rent+= c+" , ";
+                        document.getElementById("solucao1").innerHTML = "Os números entre A e Z são: ("+rent+").";
+
+                    }
+                    
+                }
+
+
+            </script>    
+
+            </script>    
+
+        </div>
+        <!--Questão 02 Lista armazenada (adiciona, mostra e limpa)-->
+        <div class="questao">
+            <h1>Questã 02:<span> Lista armazenada <a
+                        href="detalhesExe12.html"
+                        target="_blank">detalhar</a></span></h1>
+            <p id="solucao02">Resultado: A lista de itens é [xxxx,xxxx,xxxx,xxxxx]</p>
+            <label for="relacao01">Item:</label>
+            <input type="text" id="relacao01">
+            <input type="button" onclick="adicionar()" value="Add">
+            <input type="button" onclick="mostrar()" value="Show">
+            <input type="button" onclick="limpar()"value="Clear">
+            <script>
+                  var lista= [];
+                  function adicionar (){
+                      lista.push(document.getElementById("relacao01").value);
+                      console.log(lista);
+                  }
+                 
+                  function mostrar(){
+                      document.getElementById("solucao02").innerHTML = "A lista de itens é["+lista+"].";
+
+                  }
+                  function limpar(){
+                      lista =[];
+                      document.getElementById("solucao02").innerHTML = "A lista de itens é [xx,xx.xx]" 
+                      console.log (lista);
+                  }
+
+
+            </script>
+            
+        </div>
+        <div class="questao">
+            <h1>Questã 03:<span> Lista homens e mulheres <a
+                        href="detalhesExe12.html"
+                        target="_blank">detalhar</a></span></h1>
+            <p id="">Resultado:
+                <br>Lista de homens [xxxx,xxxx,xxxx,xxxxx]
+                <br>Lista de mulheres [xxxx,xxxx,xxxx,xxxxx]
+            </p>
+            <label for="">Nome:</label>
+            <input type="text" id="">
+            <label for="">Sexo:</label>
+            <select name="sexo" id="">
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+            <input type="button" value="Add">
+            <input type="button" value="Show">
+            <input type="button" value="Clear">
+        </div>
+
+    </div>
+</body>
+
+</html>
+
